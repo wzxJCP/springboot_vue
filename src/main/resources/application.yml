@@ -1,0 +1,20 @@
+server:
+  port: 9090
+spring:
+  application:
+    name: springboot_vue
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/pj_vuet?useUnicode=true&characterEncoding=utf8&serverTimezone=GMT%2B8&useSSL=false
+    username: wan
+    password: 101101
+#  main:
+#    banner-mode: off
+
+mybatis:
+  # 映射xml
+  mapper-locations: classpath:mapper/*.xml
+  configuration:
+    # 配置日志
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+    map-underscore-to-camel-case: true
