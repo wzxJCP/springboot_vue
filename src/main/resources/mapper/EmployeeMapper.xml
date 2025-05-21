@@ -6,4 +6,22 @@
     <select id="selectAll" resultType="com.springboot_vue.domain.Employee">
         select * from employee
     </select>
+    <insert id="insert" parameterType="com.springboot_vue.domain.Employee">
+        insert into `employee` (name,sex,no,age,description,dept_id)
+        values (#{name},#{sex},#{no},#{age},#{description},#{deptId});
+    </insert>
 </mapper>
+
+
+<!--        create table employee-->
+<!--        (-->
+<!--        id          int auto_increment comment 'ID'-->
+<!--        primary key,-->
+<!--        name        varchar(255) null comment '姓名',-->
+<!--        sex         varchar(255) null comment '性别',-->
+<!--        no          varchar(255) null comment '工号',-->
+<!--        age         int          null comment '年龄',-->
+<!--        description longtext     null comment '个人介绍',-->
+<!--        dept_id     int          null comment '所属部门ID'-->
+<!--        )-->
+<!--        comment '员工信息表';-->

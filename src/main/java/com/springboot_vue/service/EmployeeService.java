@@ -19,6 +19,10 @@ public class EmployeeService {
     @Resource
     private EmployeeMapper employeeMapper;
 
+    public void add(Employee employee) {
+        employeeMapper.insert(employee);
+    }
+
     public List<Employee> selectAll() {
         return employeeMapper.selectAll();
     }

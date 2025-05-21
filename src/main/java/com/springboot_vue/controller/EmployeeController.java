@@ -21,6 +21,17 @@ public class EmployeeController {
     @Resource
     private EmployeeService employeeService;
 
+    /**
+     * 新增用户
+     * @param employee
+     * @return
+     */
+    @PostMapping("/add")
+    public Result add(@RequestBody Employee employee) {
+        employeeService.add(employee);
+        return Result.success();
+    }
+
     @GetMapping("/selectAll")
     public Result selectAll() {
         List<Employee> list = employeeService.selectAll();
@@ -42,6 +53,9 @@ public class EmployeeController {
 
     /**
      * 分页查询
+     * @param pageNum
+     * @param pageSize
+     * @return
      */
     @GetMapping("/selectPage")
     public Result selectPage(@RequestParam(defaultValue = "1") Integer pageNum,
@@ -49,4 +63,5 @@ public class EmployeeController {
         PageInfo<Employee> pageInfo = employeeService.selectPage(pageNum, pageSize);
         return Result.success(pageInfo);
     }
+
 }
