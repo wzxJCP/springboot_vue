@@ -31,6 +31,16 @@ public class EmployeeController {
         employeeService.add(employee);
         return Result.success();
     }
+    @PutMapping("/update")
+    public Result updateById(@RequestBody Employee employee) {
+        employeeService.update(employee);
+        return Result.success();
+    }
+    @DeleteMapping("/delete/{id}")
+    public Result deleteById(@PathVariable Integer id) {
+        employeeService.deleteById(id);
+        return Result.success();
+    }
 
     @GetMapping("/selectAll")
     public Result selectAll() {

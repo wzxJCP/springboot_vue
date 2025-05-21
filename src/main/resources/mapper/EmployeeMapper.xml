@@ -10,11 +10,18 @@
         insert into `employee` (name,sex,no,age,description,dept_id)
         values (#{name},#{sex},#{no},#{age},#{description},#{deptId});
     </insert>
+    <update id="updateById" parameterType="com.springboot_vue.domain.Employee">
+        update `employee`
+        set name = #{name},sex = #{sex},no = #{no},age = #{age},description = #{description},dept_id = #{deptId}
+        where id = #{id}
+    </update>
+    <!-- 已经使用注解实现了 -->
+<!--    <delete id="deleteById" parameterType="com.springboot_vue.domain.Employee">-->
+<!--        delete from employee-->
+<!--        where id = #{id}-->
+<!--    </delete>-->
 </mapper>
 
-
-<!--        create table employee-->
-<!--        (-->
 <!--        id          int auto_increment comment 'ID'-->
 <!--        primary key,-->
 <!--        name        varchar(255) null comment '姓名',-->

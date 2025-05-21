@@ -22,13 +22,19 @@ public class EmployeeService {
     public void add(Employee employee) {
         employeeMapper.insert(employee);
     }
+    public void update(Employee employee) {
+        employeeMapper.updateById(employee);
+    }
+
+    public void deleteById(Integer id) {
+        employeeMapper.deleteById(id);
+    }
+    public Employee selectById(Integer id) {
+        return employeeMapper.selectById(id);
+    }
 
     public List<Employee> selectAll() {
         return employeeMapper.selectAll();
-    }
-
-    public Employee selectById(Integer id) {
-        return employeeMapper.selectById(id);
     }
 
     public PageInfo<Employee> selectPage(Integer pageNum, Integer pageSize) {
