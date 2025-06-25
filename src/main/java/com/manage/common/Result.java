@@ -1,4 +1,4 @@
-package com.springboot_vue.common;
+package com.manage.common;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -10,6 +10,8 @@ import lombok.NoArgsConstructor;
  * @author：wzx
  */
 @Data
+@AllArgsConstructor
+@NoArgsConstructor
 public class Result {
     private String code;
     private String msg;

@@ -1,9 +1,9 @@
-package com.springboot_vue.controller;
+package com.manage.controller;
 
 import com.github.pagehelper.PageInfo;
-import com.springboot_vue.common.Result;
-import com.springboot_vue.domain.Employee;
-import com.springboot_vue.service.EmployeeService;
+import com.manage.common.Result;
+import com.manage.domain.Employee;
+import com.manage.service.EmployeeService;
 import jakarta.annotation.Resource;
 import org.springframework.web.bind.annotation.*;
 
@@ -36,15 +36,24 @@ public class EmployeeController {
         employeeService.update(employee);
         return Result.success();
     }
-    @DeleteMapping("/delete/{id}")
+    @DeleteMapping("/deleteById/{id}")
     public Result deleteById(@PathVariable Integer id) {
         employeeService.deleteById(id);
         return Result.success();
     }
 
+    /**
+     * 批量删除
+     */
+    @DeleteMapping("/deleteByIds")
+    public Result deleteByIds(@RequestBody List<Integer> ids) {
+            employeeService.deleteByIds(ids);
+            return Result.success();
+    }
+
     @GetMapping("/selectAll")
-    public Result selectAll() {
-        List<Employee> list = employeeService.selectAll();
+    public Result selectAll(Employee employee) {
+        List<Employee> list = employeeService.selectAll(employee);
         return Result.success(list);
     }
 
@@ -68,9 +77,10 @@ public class EmployeeController {
      * @return
      */
     @GetMapping("/selectPage")
-    public Result selectPage(@RequestParam(defaultValue = "1") Integer pageNum,
+    public Result selectPage(Employee employee,
+                             @RequestParam(defaultValue = "1") Integer pageNum,
                              @RequestParam(defaultValue = "10") Integer pageSize) {
-        PageInfo<Employee> pageInfo = employeeService.selectPage(pageNum, pageSize);
+        PageInfo<Employee> pageInfo = employeeService.selectPage(employee,pageNum, pageSize);
         return Result.success(pageInfo);
     }
 

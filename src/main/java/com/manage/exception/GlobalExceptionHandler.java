@@ -1,6 +1,6 @@
-package com.springboot_vue.exception;
+package com.manage.exception;
 
-import com.springboot_vue.common.Result;
+import com.manage.common.Result;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
  * @since：2025/5/17 2:56
  * @author：wzx
  */
-@ControllerAdvice("com.spring_vue.controller")
+@ControllerAdvice("com.manage.controller")
 public class GlobalExceptionHandler {
     @ExceptionHandler(Exception.class)
     @ResponseBody

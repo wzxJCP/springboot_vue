@@ -1,6 +1,6 @@
-package com.springboot_vue.mapper;
+package com.manage.mapper;
 
-import com.springboot_vue.domain.Employee;
+import com.manage.domain.Employee;
 import org.apache.ibatis.annotations.Delete;
 import org.apache.ibatis.annotations.Select;
 
@@ -12,7 +12,7 @@ import java.util.List;
  * @author：wzx
  */
 public interface EmployeeMapper {
-    List<Employee> selectAll();
+    List<Employee> selectAll(Employee employee);
 
     @Select("select * from employee where id = #{id}")
     Employee selectById(Integer id);
@@ -23,4 +23,10 @@ public interface EmployeeMapper {
 
     @Delete("delete from employee where id = #{id}")
     void deleteById(Integer id);
+
+    @Select("select * from employee where username = #{username}")
+    Employee selectByUsername(String username);
+
+    @Select("select * from employee where no = #{no}")
+    Employee selectByNo(String username);
 }

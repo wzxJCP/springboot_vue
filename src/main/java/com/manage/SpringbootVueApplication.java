@@ -1,11 +1,11 @@
-package com.springboot_vue;
+package com.manage;
 
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-@MapperScan("com.springboot_vue.mapper")
+@MapperScan("com.manage.mapper")
 public class SpringbootVueApplication {
 
     public static void main(String[] args) {

@@ -1,4 +1,4 @@
-package com.springboot_vue.exception;
+package com.manage.exception;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -10,8 +10,8 @@ import lombok.NoArgsConstructor;
  * @author：wzx
  */
 @Data
-@AllArgsConstructor
 @NoArgsConstructor
+@AllArgsConstructor
 public class CustomException extends RuntimeException {
     private String code;
     private String msg;

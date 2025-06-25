@@ -2,33 +2,26 @@
 <!DOCTYPE mapper
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.springboot_vue.mapper.EmployeeMapper">
-    <select id="selectAll" resultType="com.springboot_vue.domain.Employee">
+<mapper namespace="com.manage.mapper.EmployeeMapper">
+    <select id="selectAll" resultType="com.manage.domain.Employee">
         select * from employee
+        <where>
+            <if test="name != null">name like concat('%',#{name},'%')</if>
+        </where>
+        order by id desc
     </select>
-    <insert id="insert" parameterType="com.springboot_vue.domain.Employee">
-        insert into `employee` (name,sex,no,age,description,dept_id)
-        values (#{name},#{sex},#{no},#{age},#{description},#{deptId});
+    <insert id="insert" parameterType="com.manage.domain.Employee">
+        insert into `employee` (username,password,role,name,sex,no,age,description,dept_id)
+        values (#{username},#{password},#{role},#{name},#{sex},#{no},#{age},#{description},#{deptId});
     </insert>
-    <update id="updateById" parameterType="com.springboot_vue.domain.Employee">
+    <update id="updateById" parameterType="com.manage.domain.Employee">
         update `employee`
-        set name = #{name},sex = #{sex},no = #{no},age = #{age},description = #{description},dept_id = #{deptId}
+        set username = #{username},password = #{password},role = #{role},name = #{name},sex = #{sex},no = #{no},age = #{age},description = #{description},dept_id = #{deptId}
         where id = #{id}
     </update>
     <!-- 已经使用注解实现了 -->
-<!--    <delete id="deleteById" parameterType="com.springboot_vue.domain.Employee">-->
+<!--    <delete id="deleteById" parameterType="com.manage.domain.Employee">-->
 <!--        delete from employee-->
 <!--        where id = #{id}-->
 <!--    </delete>-->
 </mapper>
-
-<!--        id          int auto_increment comment 'ID'-->
-<!--        primary key,-->
-<!--        name        varchar(255) null comment '姓名',-->
-<!--        sex         varchar(255) null comment '性别',-->
-<!--        no          varchar(255) null comment '工号',-->
-<!--        age         int          null comment '年龄',-->
-<!--        description longtext     null comment '个人介绍',-->
-<!--        dept_id     int          null comment '所属部门ID'-->
-<!--        )-->
-<!--        comment '员工信息表';-->
