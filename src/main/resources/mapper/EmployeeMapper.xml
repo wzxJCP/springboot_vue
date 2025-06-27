@@ -11,12 +11,12 @@
         order by id desc
     </select>
     <insert id="insert" parameterType="com.manage.domain.Employee">
-        insert into `employee` (username,password,role,name,sex,no,age,description,dept_id)
-        values (#{username},#{password},#{role},#{name},#{sex},#{no},#{age},#{description},#{deptId});
+        insert into `employee` (username,password,role,name,sex,no,age,description,dept_id,avatar)
+        values (#{username},#{password},#{role},#{name},#{sex},#{no},#{age},#{description},#{deptId},#{avatar});
     </insert>
     <update id="updateById" parameterType="com.manage.domain.Employee">
         update `employee`
-        set username = #{username},password = #{password},role = #{role},name = #{name},sex = #{sex},no = #{no},age = #{age},description = #{description},dept_id = #{deptId}
+        set username = #{username},password = #{password},role = #{role},name = #{name},sex = #{sex},no = #{no},age = #{age},description = #{description},dept_id = #{deptId},avatar = #{avatar}
         where id = #{id}
     </update>
     <!-- 已经使用注解实现了 -->

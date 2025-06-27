@@ -11,12 +11,12 @@
         order by id desc
     </select>
     <insert id="insert" parameterType="com.manage.domain.Admin">
-        insert into `admin` (username,password,role,name)
-        values (#{username},#{password},#{role},#{name});
+        insert into `admin` (username,password,role,name,avatar)
+        values (#{username},#{password},#{role},#{name},{avatar});
     </insert>
     <update id="updateById" parameterType="com.manage.domain.Admin">
         update `admin`
-        set username = #{username},password = #{password},role = #{role},name = #{name}
+        set username = #{username},password = #{password},role = #{role},name = #{name},avatar = #{avatar}
         where id = #{id}
     </update>
 </mapper>
