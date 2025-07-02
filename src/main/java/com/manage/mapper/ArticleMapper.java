@@ -24,4 +24,6 @@ public interface ArticleMapper {
     @Delete("delete from article where id = #{id}")
     void deleteById(Integer id);
 
+    @Select("select count(*) from article where time like '%${date}%'")
+    Integer selectCountByDate(String date);
 }

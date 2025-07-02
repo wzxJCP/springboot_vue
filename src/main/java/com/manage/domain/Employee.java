@@ -22,5 +22,8 @@ public class Employee extends Account {
     private String no;
     private Integer age;
     private String description;
-    private Integer deptId;
+    // 对应数据库字段 department_id
+    private Integer departmentId;
+    // 用于接收 Excel 中的“部门名称”
+    private String deptName;
 }
