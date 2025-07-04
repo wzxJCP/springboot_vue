@@ -3,9 +3,7 @@ package com.manage.controller;
 import cn.hutool.core.io.FileUtil;
 import com.manage.common.Result;
 import com.manage.exception.CustomException;
-import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletResponse;
-import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 

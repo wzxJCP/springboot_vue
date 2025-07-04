@@ -65,7 +65,7 @@ public class WebController {
     @PostMapping("/register")
     public Result register(@RequestBody Employee employee) {
         employeeService.register(employee);
-        return Result.success();
+        return Result.success("注册成功！");
     }
 
     /**
@@ -80,7 +80,7 @@ public class WebController {
         } else {
             throw new CustomException("500", "非法输入!");
         }
-        return Result.success();
+        return Result.success("密码修改成功！");
     }
 
     // @GetMapping("/barData")
