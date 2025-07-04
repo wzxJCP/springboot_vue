@@ -39,7 +39,7 @@ public class AdminController {
     @DeleteMapping("/deleteById/{id}")
     public Result deleteById(@PathVariable Integer id) {
         adminService.deleteById(id);
-        return Result.success();
+        return Result.success("删除用户成功！");
     }
 
     /**
@@ -48,7 +48,7 @@ public class AdminController {
     @DeleteMapping("/deleteByIds")
     public Result deleteByIds(@RequestBody List<Integer> ids) {
             adminService.deleteByIds(ids);
-            return Result.success();
+            return Result.success("批量删除用户成功！");
     }
 
     @GetMapping("/selectAll")
