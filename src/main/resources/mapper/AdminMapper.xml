@@ -12,7 +12,7 @@
     </select>
     <insert id="insert" parameterType="com.manage.domain.Admin">
         insert into `admin` (username,password,role,name,avatar)
-        values (#{username},#{password},#{role},#{name},{avatar});
+        values (#{username},#{password},#{role},#{name},#{avatar});
     </insert>
     <update id="updateById" parameterType="com.manage.domain.Admin">
         update `admin`
