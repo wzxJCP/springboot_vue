@@ -29,17 +29,17 @@ public class DepartmentController {
     @PostMapping("/add")
     public Result add(@RequestBody Department department) {
         departmentService.add(department);
-        return Result.success();
+        return Result.success("新增部门成功！");
     }
     @PutMapping("/update")
     public Result updateById(@RequestBody Department department) {
         departmentService.update(department);
-        return Result.success();
+        return Result.success("更新部门成功！");
     }
     @DeleteMapping("/deleteById/{id}")
     public Result deleteById(@PathVariable Integer id) {
         departmentService.deleteById(id);
-        return Result.success();
+        return Result.success("删除部门成功！");
     }
 
     /**
@@ -48,7 +48,7 @@ public class DepartmentController {
     @DeleteMapping("/deleteByIds")
     public Result deleteByIds(@RequestBody List<Integer> ids) {
             departmentService.deleteByIds(ids);
-            return Result.success();
+            return Result.success("批量删除部门成功！");
     }
 
     @GetMapping("/selectAll")
