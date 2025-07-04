@@ -68,7 +68,7 @@ public class EmployeeController {
     @DeleteMapping("/deleteByIds")
     public Result deleteByIds(@RequestBody List<Integer> ids) {
         employeeService.deleteByIds(ids);
-        return Result.success();
+        return Result.success("批量删除成功！");
     }
 
     @GetMapping("/selectAll")
