@@ -16,7 +16,7 @@
     </insert>
     <update id="updateById" parameterType="com.manage.domain.Admin">
         update `admin`
-        set username = #{username},password = #{password},role = #{role},name = #{name},avatar = #{avatar}
+        set username = #{username},name = #{name},avatar = #{avatar}
         where id = #{id}
     </update>
 </mapper>

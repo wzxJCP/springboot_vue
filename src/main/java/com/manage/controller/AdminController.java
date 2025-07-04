@@ -29,12 +29,12 @@ public class AdminController {
     @PostMapping("/add")
     public Result add(@RequestBody Admin admin) {
         adminService.add(admin);
-        return Result.success();
+        return Result.success("新增用户成功！");
     }
     @PutMapping("/update")
     public Result updateById(@RequestBody Admin admin) {
         adminService.update(admin);
-        return Result.success();
+        return Result.success("更新用户信息成功！");
     }
     @DeleteMapping("/deleteById/{id}")
     public Result deleteById(@PathVariable Integer id) {
